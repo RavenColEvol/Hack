@@ -1,0 +1,442 @@
+{%extends 'main/base.html'%}
+{%load staticfiles%}
+
+{%block body%}
+<!-- Form Start -->
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+<section id="form-map" class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-12">
+
+                <div class="section-title-header text-center">
+                    <h1 class="section-title wow fadeInUp animated" data-wow-delay="0.2s"
+                        style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">
+                        Registration</h1>
+                    <!--<p class="wow fadeInDown animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">Global Grand Event on Digital Design</p>-->
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-xs-12">
+                <div class="container-form wow fadeInLeft animated" data-wow-delay="0.2s"
+                    style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">
+                    <div class="form-wrapper">
+                        <form role="form" method="post" id="contactForm" name="contact-form">{%csrf_token%}
+                            <p class="text-danger text-center">
+
+                                    {%if form.non_field_errors%}
+                                        {%for err in form.non_field_errors%}
+                                        {{err}}
+                                        {%endfor%}
+                                    {%endif%}
+                            
+                            </p>
+                            <div class="row">
+                                    
+                                <div class="col-md-12 form-line">
+                                        
+                                    <div class="form-group">
+                                        <select class="form-control" id="id_problem_statement_1"
+                                            name="problem_statement_1">
+                                            <option disabled=''  selected=''>Problem Statement 1</option>
+                                            {% for x,y in form.fields.problem_statement_1.choices %}
+                                            <option value="{{ x }}">{{ y }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="help-block with-errors">{{forms.problem_statement_1.errors.as_text}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <textarea name="abstract_1" class='form-control' id="id_abstract_1" cols="30" rows="3" required></textarea>
+                                        <div class="help-block with-errors">{{forms.abstract_1.errors.as_text}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" id="id_problem_statement_2"
+                                            name="problem_statement_2">
+                                            <option disabled='' selected=''>Problem Statement 2</option>
+                                            {% for x,y in form.fields.problem_statement_2.choices %}
+                                            <option value="{{ x }}">{{ y }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="help-block with-errors">{{forms.problem_statement_2.errors.as_text}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <textarea name="abstract_2" class='form-control' id="id_abstract_2" cols="30" rows="3" required></textarea>
+                                        <div class="help-block with-errors">{{forms.abstract_2.errors.as_text}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" id="id_problem_statement_3"
+                                            name="problem_statement_3">
+                                            <option disabled='' selected=''>Problem Statement 3</option>
+                                            {% for x,y in form.fields.problem_statement_3.choices %}
+                                            <option value="{{ x }}" >{{ y }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="help-block with-errors">{{forms.problem_statement_3.errors.as_text}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <textarea name="abstract_3" class='form-control' id="id_abstract_3" cols="30" rows="3" required></textarea>
+                                        <div class="help-block with-errors">{{forms.abstract_3.errors.as_text}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" id="id_problem_statement_4"
+                                            name="problem_statement_4">
+                                            <option value="" disabled='' selected=''>Problem Statement 4</option>
+                                            {% for x,y in form.fields.problem_statement_4.choices %}
+                                            <option value="{{ x }}">{{ y }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="help-block with-errors">{{forms.problem_statement_4.errors.as_text}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <textarea name="abstract_4" class='form-control' id="id_abstract_4" cols="30" rows="3" required></textarea>
+                                        <div class="help-block with-errors">{{forms.abstract_4.errors.as_text}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_team_name" name="team_name"
+                                            placeholder="Team Name" 
+                                            data-error="Please enter your team name">
+                                        <div class="help-block with-errors"{{forms.problem_statement_4.errors.as_text}}></div>
+                                    </div>
+                                </div>
+                                <!-- Team Leader Details -->
+                                <h5 class="form-heading">TEAM LEADER</h5>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_team_leader_name"
+                                            name="team_leader_name" placeholder="Full Name" 
+                                            data-error="Please enter your name">
+                                        <div class="help-block with-errors">{{ form.team_leader_name.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_team_leader_college_name"
+                                            name="team_leader_college_name" placeholder="College Name" 
+                                            data-error="Please enter your College Name">
+                                        <div class="help-block with-errors">
+                                            {{ form.team_leader_college_name.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="team_leader_year" id="id_team_leader_year">
+                                            <option value="I">First Year</option>
+
+                                            <option value="II">Second Year</option>
+
+                                            <option value="III">Third Year</option>
+
+                                            <option value="IV">Forth Year</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 form-line">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="id_team_leader_email"
+                                            name="team_leader_email" placeholder="Email" 
+                                            data-error="Please enter your Email">
+                                        <div class="help-block with-errors">{{ form.team_leader_email.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_team_leader_tel_number"
+                                            name="team_leader_tel_number" placeholder="Phone Number" 
+                                            data-error="Please enter your Mobile Number">
+                                        <div class="help-block with-errors">
+                                            {{ form.team_leader_tel_number.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="team_leader_tsize" id="id_team_leader_tsize">
+                                            <option value="S">S-36</option>
+
+                                            <option value="M">M-38</option>
+
+                                            <option value="L">L-40</option>
+
+                                            <option value="XL">XL-42</option>
+
+                                            <option value="XXL">XXL-44</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Teamate 1 details -->
+                                <h5 class="form-heading">TEAMMATE 1</h5>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate1_name"
+                                            name="teammate1_name" placeholder="Full Name" 
+                                            data-error="Please enter your name">
+                                        <div class="help-block with-errors">{{ form.teammate1_name.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate1_college_name"
+                                            name="teammate1_college_name" placeholder="College Name" 
+                                            data-error="Please enter your College Name">
+                                        <div class="help-block with-errors">
+                                            {{ form.teammate1_college_name.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate1_year" id="id_teammate1_year">
+                                            <option value="I">First Year</option>
+
+                                            <option value="II">Second Year</option>
+
+                                            <option value="III">Third Year</option>
+
+                                            <option value="IV">Forth Year</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 form-line">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="id_teammate1_email"
+                                            name="teammate1_email" placeholder="Email" 
+                                            data-error="Please enter your Email">
+                                        <div class="help-block with-errors">{{ form.teammate1_email.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate1_tel_number"
+                                            name="teammate1_tel_number" placeholder="Phone Number" 
+                                            data-error="Please enter your Mobile Number">
+                                        <div class="help-block with-errors">
+                                            {{ form.teammate1_tel_number.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate1_tsize" id="id_teammate1_tsize">
+                                            <option value="S">S-36</option>
+
+                                            <option value="M">M-38</option>
+
+                                            <option value="L">L-40</option>
+
+                                            <option value="XL">XL-42</option>
+
+                                            <option value="XXL">XXL-44</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.teammate1_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Teammate2 Details -->
+                                <h5 class="form-heading">TEAMMATE 2</h5>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate2_name"
+                                            name="teammate2_name" placeholder="Full Name" 
+                                            data-error="Please enter your name">
+                                        <div class="help-block with-errors">{{ form.teammate2_name.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate2_college_name"
+                                            name="teammate2_college_name" placeholder="College Name" 
+                                            data-error="Please enter your College Name">
+                                        <div class="help-block with-errors">
+                                            {{ form.teammate2_college_name.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate2_year" id="id_teammate2_year">
+                                            <option value="I">First Year</option>
+
+                                            <option value="II">Second Year</option>
+
+                                            <option value="III">Third Year</option>
+
+                                            <option value="IV">Forth Year</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 form-line">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="id_teammate2_email"
+                                            name="teammate2_email" placeholder="Email" 
+                                            data-error="Please enter your Email">
+                                        <div class="help-block with-errors">{{ form.teammate2_email.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate2_tel_number"
+                                            name="teammate2_tel_number" placeholder="Phone Number" 
+                                            data-error="Please enter your Mobile Number">
+                                        <div class="help-block with-errors">
+                                            {{ form.teammate2_tel_number.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate2_tsize" id="id_teammate2_tsize">
+                                            <option value="S">S-36</option>
+
+                                            <option value="M">M-38</option>
+
+                                            <option value="L">L-40</option>
+
+                                            <option value="XL">XL-42</option>
+
+                                            <option value="XXL">XXL-44</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.teammate2_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Teammate 3 Details -->
+                                <h5 class="form-heading">TEAMMATE 3</h5>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate3_name"
+                                            name="teammate3_name" placeholder="Full Name" 
+                                            data-error="Please enter your name">
+                                        <div class="help-block with-errors">{{ form.teammate3_name.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate3_college_name"
+                                            name="teammate3_college_name" placeholder="College Name" 
+                                            data-error="Please enter your College Name">
+                                        <div class="help-block with-errors">
+                                            {{ form.teammate3_college_name.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate3_year" id="id_teammate3_year">
+                                            <option value="I">First Year</option>
+
+                                            <option value="II">Second Year</option>
+
+                                            <option value="III">Third Year</option>
+
+                                            <option value="IV">Forth Year</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 form-line">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="id_teammate3_email"
+                                            name="teammate3_email" placeholder="Email" 
+                                            data-error="Please enter your Email">
+                                        <div class="help-block with-errors">{{ form.teammate3_email.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="id_teammate3_tel_number"
+                                            name="teammate3_tel_number" placeholder="Phone Number" 
+                                            data-error="Please enter your Mobile Number">
+                                        <div class="help-block with-errors">
+                                            {{ form.teammate3_tel_number.errors.as_text }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate3_tsize" id="id_teammate3_tsize">
+                                            <option value="S">S-36</option>
+
+                                            <option value="M">M-38</option>
+
+                                            <option value="L">L-40</option>
+
+                                            <option value="XL">XL-42</option>
+
+                                            <option value="XXL">XXL-44</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.teammate3_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+
+                                    <div class="form-submit">
+                                        <button type="submit" class="btn btn-common disabled" id="form-submit"
+                                            style="pointer-events: all; cursor: pointer;"><i class="fa fa-paper-plane"
+                                                aria-hidden="true"></i> REGISTER</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Form End -->
+
+{%endblock%}

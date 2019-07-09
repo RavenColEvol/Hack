@@ -1,0 +1,41 @@
+{%extends 'main/base.html'%}
+{%load staticfiles%}
+
+
+{%block body%}
+    </header>
+    <!-- Header Area wrapper End -->
+    <div id="problems_list"></div>
+    <!-- Selection Area Start -->
+    <section class='selection-wrapper' >
+        
+            <div id="accordion">
+                {%for problem in problems%}
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <div class="images-box">
+                                <img class="img-fluid" src="{{problem.company_logo.url}}" alt="image">
+                            </div>
+                            
+                            <div class='content-box'>
+                                <span class="time">{{problem.company_name}}</span>
+                                <p>
+                                    {{problem.company_problem_statement}}
+                                </p>
+                                
+                            </div>
+                                
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+                <div class="text-center">
+                    <a href="{%url 'student_form'%}" class="btn btn-common">Enroll Now</a>
+                </div>
+            </div>
+    
+    </section>
+
+ {%endblock%}
