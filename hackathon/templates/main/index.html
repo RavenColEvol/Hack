@@ -1,6 +1,31 @@
 {%extends 'main/base.html'%}
 {%load staticfiles%}
 {%block body%}
+<style>
+    .third{
+            background: linear-gradient(45deg,#a75b10 100%,#ffd8b1);
+            box-shadow: 0 0 12px #ffd8b1;
+    }
+
+    @media only screen and (max-width: 767px){
+        .accordion .card-body {
+        font-size: 11px;
+        padding-top: 0.8rem;
+        }
+        .schedule .schedule-tab-title .nav-tabs .nav-item{
+            width:100%;
+        }
+        .schedule .schedule-tab-title .nav-tabs .nav-link {
+            width:100%;
+        }
+    }
+    @media (max-width: 991px){
+        .accordion .card-body {
+        font-size: 12px;
+        padding-top: 0.8rem;
+        }
+    }
+</style>
 <!-- Main Carousel Section Start -->
 <div id="main-slide" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -240,7 +265,7 @@
 <!-- Sponser Section End -->
 
 <!-- Prize Section Start -->
-<section class="section-padding" id='prizes'> 
+<section class="section-padding" id='prizes'>
       <div class="container-fluid">
           <div class="section-title-header text-center">
               <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Prizes</h1>
@@ -252,7 +277,7 @@
                 <img src="{%static 'img/trophy/2nd.svg'%}" alt="">
             </div>
             <div class="prize-card-content second">
-              Rs. 40,000
+              Rs. 25,000
             </div>
           </div>
           <div class="prize-card text-center">
@@ -261,7 +286,7 @@
                 <img src="{%static 'img/trophy/1st.svg'%}" alt="">
             </div>
             <div class="prize-card-content first">
-                Rs. 50,000 
+                Rs. 40,000
             </div>
           </div>
           <div class="prize-card text-center">
@@ -270,10 +295,10 @@
                 <img src="{%static 'img/trophy/3rd.svg'%}" alt="">
             </div>
             <div class="prize-card-content third">
-                Rs. 40,000 
+                Rs. 10,000
             </div>
           </div>
-      </div>  
+      </div>
 </section>
 <!-- Prize Section End -->
 
@@ -362,12 +387,14 @@
         <br>
         <h2 class="intro-title">REGISTRATION</h2>
         <ul class="list-specification">
-          <li><i class="lni-check-mark-circle"></i> Select a total of 4 problem statement from the provided problem
+          <li><i class="lni-check-mark-circle"></i> Select a total of 4 problem statement from the provided set of problem
             statements.</li>
-          <li><i class="lni-check-mark-circle"></i> The Final Problem statement of your team will be revealed one day
+          <li><i class="lni-check-mark-circle"></i> Provide the abstract/solution for the selected 4
+            statements.</li>
+          <li><i class="lni-check-mark-circle"></i> The Final Problem statement for your team will be revealed one day
             prior to the event.</li>
-          <li><i class="lni-check-mark-circle"></i> Payment for the selected teams i.e. ₹500 per member should be done
-            by 26 th September 2018 . Payment for all team members should be done by a single transaction.</li>
+          <li><i class="lni-check-mark-circle"></i> Payment for the selected teams i.e. Rs.500 per member should be done
+            by 26th September 2019 . Payment for all team members should be done by a single transaction.</li>
           <li><i class="lni-check-mark-circle"></i> Further details will be provided in email.</li>
           <li><i class="lni-check-mark-circle"></i> Following are the methods of payment</li>
         </ul>
@@ -512,7 +539,7 @@
                   <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="false" aria-controls="collapseOne">
                     <div class="images-box">
-                      <img class="img-fluid" src="{%static 'img/speaker/speakers-1.jpg'%}" alt="">
+                      <img class="img-fluid" src="{%static 'img/code-min.png'%}" alt="">
                     </div>
                     <span class="time">08 AM</span>
                     <h4>Coding Begins</h4>
@@ -522,8 +549,7 @@
                 </div>
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
-                    <p>Consectetur adipisicing elit. Quod distinctio impedit sint accusantium ducimus lites consequuntur
-                      innobisl dolores saepe.Proin sit amet turpis lobortis.</p>
+                    <p>All participants are expected to reach the venue on time & start working on their projects by 08 AM.</p>
                     <div class="location">
                       <span>Location:</span> Labs
                     </div>
@@ -535,7 +561,7 @@
                   <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
                     <div class="images-box">
-                      <img class="img-fluid" src="{%static 'img/speaker/speakers-2.jpg'%}" alt="">
+                      <img class="img-fluid" src="{%static 'img/inaug-min.png'%}" alt="">
                     </div>
                     <span class="time">09 AM - 10 AM </span>
                     <h4>Inauguration of Hackathon</h4>
@@ -544,8 +570,7 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                   <div class="card-body">
-                    <p>Consectetur adipisicing elit. Quod distinctio impedit sint accusantium ducimus lites consequuntur
-                      innobisl dolores saepe.Proin sit amet turpis lobortis.</p>
+                    <p>Inauguration of the Hackathon Event will be done by the Chief Guest, Principal Sir & all our Faculty Members.</p>
                     <div class="location">
                       <span>Location:</span> Seminar Hall
                     </div>
@@ -558,7 +583,7 @@
                       <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         <div class="images-box">
                           <img class="img-fluid" src="{%static 'img/speaker/speakers-3.jpg'%}" alt="">
-                        </div>                     
+                        </div>
                         <span class="time">10am - 12:30pm</span>
                         <h4>Getting Started With SketchApp</h4>
                         <h5 class="name">David Warner</h5>
@@ -583,7 +608,7 @@
                   <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseOne1"
                     aria-expanded="false" aria-controls="collapseOne1">
                     <div class="images-box">
-                      <img class="img-fluid" src="{%static 'img/speaker/speakers-1.jpg'%}" alt="">
+                      <img class="img-fluid" src="{%static 'img/judge-min.png'%}" alt="">
                     </div>
                     <span class="time">01 PM - 02 PM</span>
                     <h4>Selection for finalist</h4>
@@ -592,8 +617,7 @@
                 </div>
                 <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne1" data-parent="#accordion2">
                   <div class="card-body">
-                    <p>Consectetur adipisicing elit. Quod distinctio impedit sint accusantium ducimus lites consequuntur
-                      innobisl dolores saepe.Proin sit amet turpis lobortis.</p>
+                    <p>All Participants need to present their final work and the best ones will proceed for Pitching Round.</p>
                     <div class="location">
                       <span>Location:</span> Labs
                     </div>
@@ -605,7 +629,7 @@
                   <div class="collapsed card-header" data-toggle="collapse" data-target="#collapseTwo2"
                     aria-expanded="false" aria-controls="collapseTwo2">
                     <div class="images-box">
-                      <img class="img-fluid" src="{%static 'img/speaker/speakers-2.jpg'%}" alt="">
+                      <img class="img-fluid" src="{%static 'img/pitch-min.png'%}" alt="">
                     </div>
                     <span class="time">03 PM - 05 PM</span>
                     <h4>Final pitching of finalists.</h4>
@@ -614,8 +638,7 @@
                 </div>
                 <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2" data-parent="#accordion2">
                   <div class="card-body">
-                    <p>Consectetur adipisicing elit. Quod distinctio impedit sint accusantium ducimus lites consequuntur
-                      innobisl dolores saepe.Proin sit amet turpis lobortis.</p>
+                    <p>Pitching Round for the Finalists from which the Winners will be declared.</p>
                     <div class="location">
                       <span>Location:</span> Seminar Hall
                     </div>
@@ -639,45 +662,61 @@
           <div class="col-12">
             <div class="section-title-header text-center">
               <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">our event gallery</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+              <!--<p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>-->
             </div>
           </div>
         </div>
 
         <div class="row left-positioning">
           <div class="col-md-5">
-              <img src="{%static 'img/car1-min.png'%}" class="img-fluid" alt="">
+              <img src="{%static 'img/winners.jpg'%}" class="img-fluid" alt="">
           </div>
           <div class="col-md-7">
-            <button class="btn btn-common">Oct 13,2017</button>
+            <button class="btn btn-common">Oct 13, 2017</button>
             <div class="content">
               <ul class='tabs'>
-                <li><a href="">a</a></li>
-                <li><a href="">b</a></li>
-                <li><a href="">c</a></li>
+                <li><a href="">23 Teams</a></li>
+                <li><a href="">6 Finalists</a></li>
+                <li><a href="">Prize worth Rs.40,000</a></li>
               </ul>
-              <h5>The Initial Stage ! </h5>
+              <ul class='tabs'>
+                <li><a href="">1st St. John</a></li>
+                <li><a href="">2nd DJ Sanghvi</a></li>
+                <li><a href="">3rd VCET</a></li>
+              </ul>
+              <br>
+              <h5><b>THE INITIAL STAGE ! </b></h5>
               <p>
-                This was the first time that VCET was organising Hackathon and which went on to be one of the most successful events of the college. VCET's Hackathon 2017 saw 23 teams consisting of 65 participants competing against each other for 30 hours showcasing their Coding prowess to solve a Real World problem through their working prototypes. Out of these teams, 6 finalists were selected by the Jury for the Final Pitching before the Judges and escalated one step closer for bagging cash prizes worth 40,000 INR. 
+                This was the first time that VCET was organising Hackathon and which went on to be one of the most successful events of the college. VCET's Hackathon 2017 saw 23 teams consisting of 65 participants competing against each other for 30 hours showcasing their Coding prowess to solve a Real World problem through their working prototypes.
+                <br>
+                The final day saw the 6 finalists pitching their unique ideas with working solutions before the judges. Out of which the Top 3 teams emerged as the winners of the very first edition of VCET's Hackathon winning cash prizes worth 40,000 INR.
               </p>
             </div>
           </div>
         </div>
         <div class="row right-positioning">
             <div class="col-md-5">
-                <img src="{%static 'img/car1-min.png'%}" class="img-fluid" alt="">
+                <img src="{%static 'img/car3-min.png'%}" class="img-fluid" alt="">
             </div>
             <div class="col-md-7">
-              <button class="btn btn-common">Oct 13,2017</button>
+              <button class="btn btn-common">Oct 5, 2018</button>
               <div class="content">
                 <ul class='tabs'>
-                  <li><a href="">a</a></li>
-                  <li><a href="">b</a></li>
-                  <li><a href="">c</a></li>
+                  <li><a href="">36 Teams</a></li>
+                  <li><a href="">8 Finalists</a></li>
+                  <li><a href="">Prize worth Rs.40,000</a></li>
                 </ul>
-                <h5>The Initial Stage ! </h5>
+                <ul class='tabs'>
+                  <li><a href="">1st Team Revamp</a></li>
+                <li><a href="">2nd Team Droidbox</a></li>
+                <li><a href="">3rd Team Elite++</a></li>
+                </ul>
+                <br>
+                <h5><b>SECOND ANNUAL ! </b></h5>
                 <p>
-                  This was the first time that VCET was organising Hackathon and which went on to be one of the most successful events of the college. VCET's Hackathon 2017 saw 23 teams consisting of 65 participants competing against each other for 30 hours showcasing their Coding prowess to solve a Real World problem through their working prototypes. Out of these teams, 6 finalists were selected by the Jury for the Final Pitching before the Judges and escalated one step closer for bagging cash prizes worth 40,000 INR. 
+                  Hackathon 2018 which was followed by the next year turned out much more successful than the previous year. This year the number of teams went up to 36 from 23, which was in the Inaugural year. Participants came up with solutions to real world problems by showcasing their Coding prowess.
+                  <br>
+                  Apart from monetary prizes, students got Internship as well as an enriching experience of building a working prototype which gives a great credibility to the designing and development skills of the participants and adds value to their resume.
                 </p>
               </div>
             </div>
@@ -686,7 +725,7 @@
 </section>
 <!-- Gallery Section End -->
 
-<!-- Gallary Section Start 
+<!-- Gallary Section Start
 <section id="gallery" class="section-padding">
   <div class="container">
     <div class="row">
@@ -772,7 +811,7 @@
       </div>
 
     </div>
-  
+
         <div class="row justify-content-center mt-3">
           <div class="col-xs-12">
             <a href="#" class="btn btn-common">Browse All</a>
@@ -800,13 +839,12 @@
             <div class="card-header" id="headingOne">
               <div class="header-title" data-toggle="collapse" data-target="#questionOne" aria-expanded="true"
                 aria-controls="collapseOne">
-                <i class="lni-pencil"></i> How to make a new event?
+                <i class="lni-pencil"></i> How to enter in the event?
               </div>
             </div>
             <div id="questionOne" class="collapse" aria-labelledby="headingOne" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Register your team by providing the abstract to 4 Problem Statements and make the payment before the Last Date.
               </div>
             </div>
           </div>
@@ -819,8 +857,7 @@
             </div>
             <div id="questionTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                NEFT, UPI, Cash.
               </div>
             </div>
           </div>
@@ -828,13 +865,12 @@
             <div class="card-header" id="headingThree">
               <div class="header-title" data-toggle="collapse" data-target="#questionThree" aria-expanded="false"
                 aria-controls="questionThree">
-                <i class="lni-pencil"></i> Which document can i bring to meeting?
+                <i class="lni-pencil"></i> Who can join the event ?
               </div>
             </div>
             <div id="questionThree" class="collapse" aria-labelledby="headingThree" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Any Student from Universirty or College.
               </div>
             </div>
           </div>
@@ -842,13 +878,16 @@
             <div class="card-header" id="headingThree">
               <div class="header-title" data-toggle="collapse" data-target="#questionFour" aria-expanded="false"
                 aria-controls="questionFour">
-                <i class="lni-pencil"></i> Who can join at the live event venue?
+                <i class="lni-pencil"></i> Where is the event ?
               </div>
             </div>
             <div id="questionFour" class="collapse" aria-labelledby="headingThree" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Vidyavardhini's College of Engineering and Technology
+                <br>
+                K.T. Marg, Dist-Palghar, Shastri Nagar
+                <br>
+                Vasai West, Maharashtra - 401202
               </div>
             </div>
           </div>
@@ -860,13 +899,12 @@
             <div class="card-header" id="headingOne2">
               <div class="header-title" data-toggle="collapse" data-target="#questionOne2" aria-expanded="true"
                 aria-controls="collapseOne">
-                <i class="lni-pencil"></i> How to make a new event?
+                <i class="lni-pencil"></i> Can I form team with a student from different college ?
               </div>
             </div>
             <div id="questionOne2" class="collapse" aria-labelledby="headingOne" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                A team can have members from different colleges. Every member of the team must be a student of an university or a college.  A team can consist of 1 to 4 members.
               </div>
             </div>
           </div>
@@ -874,13 +912,12 @@
             <div class="card-header" id="headingTwo2">
               <div class="header-title" data-toggle="collapse" data-target="#questionTwo2" aria-expanded="false"
                 aria-controls="questionTwo">
-                <i class="lni-pencil"></i> Which payment methods do you accept?
+                <i class="lni-pencil"></i> What is the last date to register ?
               </div>
             </div>
             <div id="questionTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                The last date to register is 26th September, 2019.
               </div>
             </div>
           </div>
@@ -888,13 +925,12 @@
             <div class="card-header" id="headingThree">
               <div class="header-title" data-toggle="collapse" data-target="#questionFive" aria-expanded="false"
                 aria-controls="questionFive">
-                <i class="lni-pencil"></i>How to set price?
+                <i class="lni-pencil"></i> Which things are to be carried ?
               </div>
             </div>
             <div id="questionFive" class="collapse" aria-labelledby="headingThree" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Participants will have to bring their laptops.
               </div>
             </div>
           </div>
@@ -902,13 +938,12 @@
             <div class="card-header" id="headingThree">
               <div class="header-title" data-toggle="collapse" data-target="#questionSix" aria-expanded="false"
                 aria-controls="questionSix">
-                <i class="lni-pencil"></i> What our price list?
+                <i class="lni-pencil"></i> How much is the entry fees ?
               </div>
             </div>
             <div id="questionSix" class="collapse" aria-labelledby="headingThree" data-parent="#question">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Entry fees is Rs.500 per member.
               </div>
             </div>
           </div>
@@ -1081,7 +1116,7 @@
                   </a>
                 </h3>
                 <div class="meta-tags">
-                  <span class="date">Jan 20, 2018</span> 
+                  <span class="date">Jan 20, 2018</span>
                   <span class="comments">| <a href="#"> by Cindy Jefferson</a></span>
                 </div>
               </div>
@@ -1178,27 +1213,27 @@
         <h2 class="contact-title">For Technical Queries</h2>
         <ul class="list-specification">
           <div class="contact-content">
-            <b>Sanchitsagar Singh</b>
-            <p>+91 98695 05118</p>
+            <b>Devdoot Maji</b>
+            <p>+91 70457 36881</p>
           </div>
           <div class="contact-content">
-            <b>Akash Rajpurohit</b>
-            <p>+91 86980 15453</p>
+            <b>Ravi Lamkoti</b>
+            <p>+91 81044 91993</p>
           </div>
           <div class="contact-content">
-            <b>Raj Kotadia</b>
-            <p>+91 97739 95480</p>
+            <b>Ganesh Patil</b>
+            <p>+91 99218 41722</p>
           </div>
           <br>
           <h2 class="contact-title">For Other Queries</h2>
           <ul class="list-specification">
             <div class="contact-content">
-              <b>Sanchitsagar Singh</b>
-              <p>+91 98695 05118</p>
+              <b>Kaushik Raikar</b>
+              <p>+91 93592 46766</p>
             </div>
             <div class="contact-content">
-              <b>Akash Rajpurohit</b>
-              <p>+91 86980 15453</p>
+              <b>Saloni Bandgar</b>
+              <p>+91 78759 63140</p>
             </div>
           </ul>
       </div>

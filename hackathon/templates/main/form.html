@@ -2,6 +2,12 @@
 {%load staticfiles%}
 
 {%block body%}
+
+<style>
+    .form-control{
+        text-transform:none !important;
+    }
+</style>
 <!-- Form Start -->
 {% for message in messages %}
   <div class="alert {{ message.tags }} alert-dismissible" role="alert">
@@ -14,7 +20,7 @@
 <section id="form-map" class="section-padding">
     <div class="container">
         <div class="row justify-content-center">
-            
+
             <div class="col-12">
 
                 <div class="section-title-header text-center">
@@ -28,7 +34,7 @@
                 <div class="container-form wow fadeInLeft animated" data-wow-delay="0.2s"
                     style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;">
                     <div class="form-wrapper">
-                        <form role="form" method="post" id="contactForm" name="contact-form">{%csrf_token%}
+                        <form  role="form" method="post" id="contactForm" name="contact-form">{%csrf_token%}
                             <p class="text-danger text-center">
 
                                     {%if form.non_field_errors%}
@@ -36,12 +42,12 @@
                                         {{err}}
                                         {%endfor%}
                                     {%endif%}
-                            
+
                             </p>
                             <div class="row">
-                                    
+
                                 <div class="col-md-12 form-line">
-                                        
+
                                     <div class="form-group">
                                         <select class="form-control" id="id_problem_statement_1"
                                             name="problem_statement_1">
@@ -56,7 +62,7 @@
 
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
-                                        <textarea name="abstract_1" class='form-control' id="id_abstract_1" cols="30" rows="3" required></textarea>
+                                        <textarea placeholder="Abstract for Problem Statement 1" name="abstract_1" class='form-control' id="id_abstract_1" cols="30" rows="3" required></textarea>
                                         <div class="help-block with-errors">{{forms.abstract_1.errors.as_text}}</div>
                                     </div>
                                 </div>
@@ -75,7 +81,7 @@
 
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
-                                        <textarea name="abstract_2" class='form-control' id="id_abstract_2" cols="30" rows="3" required></textarea>
+                                        <textarea placeholder="Abstract for Problem Statement 2" name="abstract_2" class='form-control' id="id_abstract_2" cols="30" rows="3" required></textarea>
                                         <div class="help-block with-errors">{{forms.abstract_2.errors.as_text}}</div>
                                     </div>
                                 </div>
@@ -94,7 +100,7 @@
 
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
-                                        <textarea name="abstract_3" class='form-control' id="id_abstract_3" cols="30" rows="3" required></textarea>
+                                        <textarea placeholder="Abstract for Problem Statement 3" name="abstract_3" class='form-control' id="id_abstract_3" cols="30" rows="3" required></textarea>
                                         <div class="help-block with-errors">{{forms.abstract_3.errors.as_text}}</div>
                                     </div>
                                 </div>
@@ -113,14 +119,14 @@
 
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
-                                        <textarea name="abstract_4" class='form-control' id="id_abstract_4" cols="30" rows="3" required></textarea>
+                                        <textarea placeholder="Abstract for Problem Statement 4" name="abstract_4" class='form-control' id="id_abstract_4" cols="30" rows="3" required></textarea>
                                         <div class="help-block with-errors">{{forms.abstract_4.errors.as_text}}</div>
                                     </div>
                                 </div>
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_team_name" name="team_name"
-                                            placeholder="Team Name" 
+                                            placeholder="Team Name"
                                             data-error="Please enter your team name">
                                         <div class="help-block with-errors"{{forms.problem_statement_4.errors.as_text}}></div>
                                     </div>
@@ -130,7 +136,7 @@
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_team_leader_name"
-                                            name="team_leader_name" placeholder="Full Name" 
+                                            name="team_leader_name" placeholder="Full Name"
                                             data-error="Please enter your name">
                                         <div class="help-block with-errors">{{ form.team_leader_name.errors.as_text }}
                                         </div>
@@ -139,7 +145,7 @@
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_team_leader_college_name"
-                                            name="team_leader_college_name" placeholder="College Name" 
+                                            name="team_leader_college_name" placeholder="College Name"
                                             data-error="Please enter your College Name">
                                         <div class="help-block with-errors">
                                             {{ form.team_leader_college_name.errors.as_text }}</div>
@@ -164,7 +170,7 @@
                                 <div class="col-md-7 form-line">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="id_team_leader_email"
-                                            name="team_leader_email" placeholder="Email" 
+                                            name="team_leader_email" placeholder="Email"
                                             data-error="Please enter your Email">
                                         <div class="help-block with-errors">{{ form.team_leader_email.errors.as_text }}
                                         </div>
@@ -173,15 +179,16 @@
                                 <div class="col-md-6 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_team_leader_tel_number"
-                                            name="team_leader_tel_number" placeholder="Phone Number" 
+                                            name="team_leader_tel_number" placeholder="Phone Number"
                                             data-error="Please enter your Mobile Number">
                                         <div class="help-block with-errors">
                                             {{ form.team_leader_tel_number.errors.as_text }}</div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 form-line">
+                                <div class="col-md-3 form-line">
                                     <div class="form-group">
                                         <select class="form-control" name="team_leader_tsize" id="id_team_leader_tsize">
+                                            <option selected disabled>Shirt Size</option>
                                             <option value="S">S-36</option>
 
                                             <option value="M">M-38</option>
@@ -197,13 +204,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-3 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="team_leader_gender" id="id_team_leader_gender">
 
+                                            <option selected disabled>Gender</option>
+                                            <option value="M">Male</option>
+
+                                            <option value="F">Female</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_gender.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Teamate 1 details -->
                                 <h5 class="form-heading">TEAMMATE 1</h5>
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate1_name"
-                                            name="teammate1_name" placeholder="Full Name" 
+                                            name="teammate1_name" placeholder="Full Name"
                                             data-error="Please enter your name">
                                         <div class="help-block with-errors">{{ form.teammate1_name.errors.as_text }}
                                         </div>
@@ -212,7 +232,7 @@
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate1_college_name"
-                                            name="teammate1_college_name" placeholder="College Name" 
+                                            name="teammate1_college_name" placeholder="College Name"
                                             data-error="Please enter your College Name">
                                         <div class="help-block with-errors">
                                             {{ form.teammate1_college_name.errors.as_text }}</div>
@@ -234,10 +254,11 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-7 form-line">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="id_teammate1_email"
-                                            name="teammate1_email" placeholder="Email" 
+                                            name="teammate1_email" placeholder="Email"
                                             data-error="Please enter your Email">
                                         <div class="help-block with-errors">{{ form.teammate1_email.errors.as_text }}
                                         </div>
@@ -246,14 +267,14 @@
                                 <div class="col-md-6 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate1_tel_number"
-                                            name="teammate1_tel_number" placeholder="Phone Number" 
+                                            name="teammate1_tel_number" placeholder="Phone Number"
                                             data-error="Please enter your Mobile Number">
                                         <div class="help-block with-errors">
                                             {{ form.teammate1_tel_number.errors.as_text }}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 form-line">
+                                <div class="col-md-3 form-line">
                                     <div class="form-group">
                                         <select class="form-control" name="teammate1_tsize" id="id_teammate1_tsize">
                                             <option value="S">S-36</option>
@@ -272,12 +293,24 @@
                                     </div>
                                 </div>
 
+                            <div class="col-md-3 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate1_gender" id="id_teammate1_gender">
+                                            <option value="M">Male</option>
+
+                                            <option value="F">Female</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_gender.errors.as_text }}
+                                        </div>
+                                    </div>
+                            </div>
                                 <!-- Teammate2 Details -->
                                 <h5 class="form-heading">TEAMMATE 2</h5>
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate2_name"
-                                            name="teammate2_name" placeholder="Full Name" 
+                                            name="teammate2_name" placeholder="Full Name"
                                             data-error="Please enter your name">
                                         <div class="help-block with-errors">{{ form.teammate2_name.errors.as_text }}
                                         </div>
@@ -286,7 +319,7 @@
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate2_college_name"
-                                            name="teammate2_college_name" placeholder="College Name" 
+                                            name="teammate2_college_name" placeholder="College Name"
                                             data-error="Please enter your College Name">
                                         <div class="help-block with-errors">
                                             {{ form.teammate2_college_name.errors.as_text }}</div>
@@ -311,7 +344,7 @@
                                 <div class="col-md-7 form-line">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="id_teammate2_email"
-                                            name="teammate2_email" placeholder="Email" 
+                                            name="teammate2_email" placeholder="Email"
                                             data-error="Please enter your Email">
                                         <div class="help-block with-errors">{{ form.teammate2_email.errors.as_text }}
                                         </div>
@@ -320,13 +353,13 @@
                                 <div class="col-md-6 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate2_tel_number"
-                                            name="teammate2_tel_number" placeholder="Phone Number" 
+                                            name="teammate2_tel_number" placeholder="Phone Number"
                                             data-error="Please enter your Mobile Number">
                                         <div class="help-block with-errors">
                                             {{ form.teammate2_tel_number.errors.as_text }}</div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 form-line">
+                                <div class="col-md-3 form-line">
                                     <div class="form-group">
                                         <select class="form-control" name="teammate2_tsize" id="id_teammate2_tsize">
                                             <option value="S">S-36</option>
@@ -344,6 +377,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-3 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate2_gender" id="id_teammate2_gender">
+                                            <option value="M">Male</option>
+
+                                            <option value="F">Female</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_gender.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
 
 
                                 <!-- Teammate 3 Details -->
@@ -351,7 +396,7 @@
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate3_name"
-                                            name="teammate3_name" placeholder="Full Name" 
+                                            name="teammate3_name" placeholder="Full Name"
                                             data-error="Please enter your name">
                                         <div class="help-block with-errors">{{ form.teammate3_name.errors.as_text }}
                                         </div>
@@ -360,7 +405,7 @@
                                 <div class="col-md-12 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate3_college_name"
-                                            name="teammate3_college_name" placeholder="College Name" 
+                                            name="teammate3_college_name" placeholder="College Name"
                                             data-error="Please enter your College Name">
                                         <div class="help-block with-errors">
                                             {{ form.teammate3_college_name.errors.as_text }}</div>
@@ -385,7 +430,7 @@
                                 <div class="col-md-7 form-line">
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="id_teammate3_email"
-                                            name="teammate3_email" placeholder="Email" 
+                                            name="teammate3_email" placeholder="Email"
                                             data-error="Please enter your Email">
                                         <div class="help-block with-errors">{{ form.teammate3_email.errors.as_text }}
                                         </div>
@@ -394,13 +439,13 @@
                                 <div class="col-md-6 form-line">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="id_teammate3_tel_number"
-                                            name="teammate3_tel_number" placeholder="Phone Number" 
+                                            name="teammate3_tel_number" placeholder="Phone Number"
                                             data-error="Please enter your Mobile Number">
                                         <div class="help-block with-errors">
                                             {{ form.teammate3_tel_number.errors.as_text }}</div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 form-line">
+                                <div class="col-md-3 form-line">
                                     <div class="form-group">
                                         <select class="form-control" name="teammate3_tsize" id="id_teammate3_tsize">
                                             <option value="S">S-36</option>
@@ -415,6 +460,18 @@
 
                                         </select>
                                         <div class="help-block with-errors">{{ form.teammate3_tsize.errors.as_text }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 form-line">
+                                    <div class="form-group">
+                                        <select class="form-control" name="teammate3_gender" id="id_teammate3_gender">
+                                            <option value="M">Male</option>
+
+                                            <option value="F">Female</option>
+
+                                        </select>
+                                        <div class="help-block with-errors">{{ form.team_leader_gender.errors.as_text }}
                                         </div>
                                     </div>
                                 </div>

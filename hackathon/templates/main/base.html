@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Grand - Event and Conference Template</title>
+    <title>VCET | Hackathon 2019</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
@@ -33,7 +33,7 @@
         <!-- Navbar Start -->
         {% url 'problem_list' as problem_list %}
         {% url 'index' as index %}
-        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar bg-dark">
+        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar bg-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -44,7 +44,7 @@
                         <span class="icon-menu"></span>
                         <span class="icon-menu"></span>
                     </button>
-                    <a href="{%url 'index'%}" class="navbar-brand"><img src="{%static 'img/logo.png'%}" alt=""></a>
+                    <a href="{%url 'index'%}" class="navbar-brand nav-style"><img src="{%static 'img/logo.png'%}" alt=""></a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-navbar">
                     <ul class="navbar-nav mr-auto w-100 justify-content-end">
@@ -144,7 +144,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
-                        <h3><img src="{%static 'img/logo.png'%}" alt=""></h3>
+                        <h3><img src="{%static 'img/logo-white.png'%}" class="nav-style" alt=""></h3>
                         <!--
           <p>
             Aorem ipsum dolor sit amet elit sed lum tempor incididunt ut labore el dolore alg minim veniam quis nostrud ncididunt.
@@ -172,7 +172,7 @@
     
                         <h3>FOLLOW US ON</h3>
                         <div class="widget">
-                            <ul class="footer-social">
+                            <ul class="footer-social" style="display:inline-block !important;">
                                 <li><a class="facebook" href="https://www.facebook.com/VCET-Hackathon-504784249879705"
                                         target="_blank"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a class="twitter" href="https://twitter.com/login?lang=en" target="_blank"><i

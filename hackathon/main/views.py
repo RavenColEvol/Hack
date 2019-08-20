@@ -3,7 +3,7 @@ from django.contrib import messages
 from mail_templated import send_mail
 from django.views.generic import ListView, FormView, TemplateView
 from main.models import CompanyInfo
-from main.forms import StudentForm,Email
+from main.forms import StudentForm
 from django.template.loader import render_to_string
 
 # Create your views here.
@@ -27,30 +27,9 @@ def StudentFormView(request):
             instance.problem_statement_3 = form.cleaned_data['problem_statement_3']
             instance.problem_statement_4 = form.cleaned_data['problem_statement_4']
             email_address = form.cleaned_data['team_leader_email']
-            messages.success(request,'Thanks ! for applying . You\'ll be notified about further steps.')
+            print(email_address,form.cleaned_data['team_leader_name'])
+            send_mail('email/confirmation.tpl',{'team_leader':form.cleaned_data['team_leader_name']},'vcet.hackathon@vcet.edu.in',[email_address,])
             instance.save()
-            send_email(email_address)
-            return redirect('/')
+            return redirect('index')
     return render(request,'main/form.html',{'form':form})
 
-def test_email(request):
-    form = Email()
-    if request.method == 'POST':
-        form = Email(request.POST)
-        if form.is_valid():
-            to = form.cleaned_data['email_id']
-            send_mail('email/confirmation.tpl',{'team_leader':'Ravi'},'ravi@gmail.com',[to,])
-    return render(request,'main/email.html',{'form':form})
-
-def send_email(to_email):
-        subject = 'cool'
-        content = 'cm'
-        from_email = 'onecourse1@gmail.com'
-
-        send_mail(subject,
-        content,
-        from_email,
-        [to_email],
-        fail_silently=False
-        )
-        

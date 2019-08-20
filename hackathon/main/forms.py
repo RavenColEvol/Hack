@@ -32,6 +32,3 @@ class StudentForm(forms.ModelForm):
             raise forms.ValidationError('All four problem statement must be different')
 
         return self.cleaned_data
-
-class Email(forms.Form):
-    email_id = forms.CharField()

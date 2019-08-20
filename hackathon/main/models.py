@@ -31,6 +31,10 @@ class StudentForm(models.Model):
         ('IV','Fourth Year'),
     )
 
+    GENDER_CHOICES = (
+        ('M','Male'),
+        ('F','Female'),
+    )
     problem_statement_1 = models.CharField(max_length=300)
     abstract_1 = models.TextField(default="")
 
@@ -52,6 +56,7 @@ class StudentForm(models.Model):
     team_leader_email = models.EmailField(max_length=150)
     team_leader_tel_number = models.CharField(validators=[phone_regex],max_length=15)
     team_leader_tsize = models.CharField(('T-SHIRT'),max_length=5,choices=TSIZE_CHOICES,default='S')
+    team_leader_gender = models.CharField(('Gender'),max_length=5,choices=GENDER_CHOICES,default='M')
 
     # Teammate 1
     teammate1_name = models.CharField(max_length=150,null=True,blank=True)
@@ -60,6 +65,7 @@ class StudentForm(models.Model):
     teammate1_email = models.EmailField(max_length=150,null=True,blank=True)
     teammate1_tel_number = models.CharField(validators=[phone_regex],max_length=15,null=True,blank=True)
     teammate1_tsize = models.CharField(('T-SHIRT'),max_length=5,choices=TSIZE_CHOICES,null=True,blank=True,default='S')
+    teammate1_gender = models.CharField(('Gender'),max_length=5,choices=GENDER_CHOICES,default='M')
 
     # Teammate 2
     teammate2_name = models.CharField(max_length=150,null=True,blank=True)
@@ -68,6 +74,7 @@ class StudentForm(models.Model):
     teammate2_email = models.EmailField(max_length=150,null=True,blank=True)
     teammate2_tel_number = models.CharField(validators=[phone_regex],max_length=15,null=True,blank=True)
     teammate2_tsize = models.CharField(('T-SHIRT'),max_length=5,choices=TSIZE_CHOICES,null=True,blank=True,default='S')
+    teammate2_gender = models.CharField(('Gender'),max_length=5,choices=GENDER_CHOICES,default='M')
     # Teammate 3
     teammate3_name = models.CharField(max_length=150,null=True,blank=True)
     teammate3_college_name = models.CharField(max_length=150,null=True,blank=True)
@@ -75,6 +82,7 @@ class StudentForm(models.Model):
     teammate3_email = models.EmailField(max_length=150,null=True,blank=True)
     teammate3_tel_number = models.CharField(validators=[phone_regex],max_length=15,null=True,blank=True)
     teammate3_tsize = models.CharField(('T-SHIRT'),max_length=5,choices=TSIZE_CHOICES,null=True,blank=True,default='S')
+    teammate3_gender = models.CharField(('Gender'),max_length=5,choices=GENDER_CHOICES,default='M')
 
     class Meta:
         verbose_name = 'Student_Form'

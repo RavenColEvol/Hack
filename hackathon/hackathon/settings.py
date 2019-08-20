@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 from django.contrib.messages import constants as messages
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '80(9p1_0*schwg9&vyp=lz9t-8nx$cx#@8la5q+_fyx%w%5f2g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['daf66eea.ngrok.io','127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -131,7 +133,7 @@ STATICFILES_DIRS = [
 
 #########    SENDGRID EMAIL SETUP   ###########
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = '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'
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 #########    SENDGRID END    ###################
 
