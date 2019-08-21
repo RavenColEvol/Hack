@@ -10,6 +10,7 @@ django = "*"
 pillow = "*"
 django-sendgrid-v5 = "*"
 django-mail-templated = "*"
+requirements-txt = "*"
 
 [requires]
 python_version = "3.6"
